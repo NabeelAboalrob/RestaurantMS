@@ -9,7 +9,8 @@ header("location:Index.php");
 <!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> 
+<html lang="en"> <!--<![endif]-->
 <head>
 <meta charset="utf-8">
 <title>Absence List</title>
@@ -56,24 +57,17 @@ $EmployeeID=$row['Eid'];
 
 $result = @mysqli_query($Conn,"SELECT AttendanceID FROM Attendance WHERE Eid='$EmployeeID' AND Date='$Date'");
 $num= @mysqli_num_rows($result);
-if($num==0){
-
-
+if($num==0)
+{
   echo "<tr>";
   echo "<td>" .$EmployeeName. "</td></tr>";
   
-  
-
-
-
- 
-
 }}
 echo "</table><br><br>";
 mysqli_close($Conn);}else{
 	
 	//attendance list
-	  echo"<h1>Attendance List</h1>";
+	echo"<h1>Attendance List</h1>";
 
 
 $Date=date("Y-m-d");
@@ -96,26 +90,11 @@ if($num>0){
 
   echo "<tr>";
   echo "<td>" .$EmployeeName. "</td></tr>";
-  
-  
-
-
-
- 
-
 }}
 echo "</table><br><br>";
 mysqli_close($Conn);
-	
-	
-	
 	}
-?>
-
-
-
-   
-		
+?>	
  </div>
 
     <div> <a style="color:#333" href="AdminPage.php">Back</a>
